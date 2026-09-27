@@ -1,0 +1,9 @@
+{
+  "name": "apmzoom-dongdaemun",
+  "version": "1.0.0",
+  "description": "Search Dongdaemun (Seoul) wholesale fashion items, new arrivals and stalls on apMZoomAI. Read-only; no prices or contact details.",
+  "mcpServers": {
+    "apmzoom": { "httpUrl": "https://www.apmzoom.com/mcp" }
+  },
+  "contextFileName": "GEMINI.md"
+}

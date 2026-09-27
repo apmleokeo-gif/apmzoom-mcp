@@ -1,0 +1,17 @@
+{
+  "name": "apmzoom",
+  "owner": {
+    "name": "apM Hwashin Co., Ltd.",
+    "email": "apm@apmzoom.com"
+  },
+  "metadata": {
+    "description": "apMZoomAI plugins for sourcing wholesale fashion from the Dongdaemun market, Seoul."
+  },
+  "plugins": [
+    {
+      "name": "apmzoom-dongdaemun",
+      "source": "./plugins/apmzoom-dongdaemun",
+      "description": "Search Dongdaemun (Seoul) wholesale fashion items, new arrivals and stalls on apMZoomAI."
+    }
+  ]
+}

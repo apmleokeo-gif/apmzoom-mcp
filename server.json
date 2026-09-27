@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.apmzoom.www/dongdaemun",
+  "title": "apMZoomAI · Dongdaemun wholesale",
+  "description": "Search Dongdaemun (Seoul) wholesale fashion items, new arrivals and stalls on apMZoomAI.",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.apmzoom.com",
+  "repository": {
+    "url": "https://github.com/apmleokeo-gif/apmzoom-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://www.apmzoom.com/pwa-icon-192.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "192x192"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.apmzoom.com/mcp"
+    }
+  ]
+}

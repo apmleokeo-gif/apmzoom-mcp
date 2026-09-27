@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "apmzoom": { "type": "http", "url": "https://www.apmzoom.com/mcp" }
+  }
+}

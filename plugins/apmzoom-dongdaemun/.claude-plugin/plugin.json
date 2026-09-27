@@ -1,0 +1,22 @@
+{
+  "name": "apmzoom-dongdaemun",
+  "displayName": "apMZoomAI · Dongdaemun wholesale",
+  "version": "1.0.0",
+  "description": "Search wholesale fashion items, new arrivals and stalls in the Dongdaemun market, Seoul, through the apMZoomAI MCP server, with a skill that guides sourcing answers. Read-only; no prices or contact details.",
+  "author": {
+    "name": "apM Hwashin Co., Ltd.",
+    "email": "apm@apmzoom.com",
+    "url": "https://www.apmzoom.com"
+  },
+  "homepage": "https://www.apmzoom.com",
+  "license": "MIT",
+  "keywords": [
+    "dongdaemun",
+    "wholesale",
+    "fashion",
+    "korea",
+    "sourcing",
+    "b2b"
+  ],
+  "repository": "https://github.com/apmleokeo-gif/apmzoom-mcp"
+}

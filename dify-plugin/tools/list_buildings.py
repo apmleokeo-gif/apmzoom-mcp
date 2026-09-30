@@ -7,8 +7,8 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from utils.mcp_client import LANGS, build_arguments, call_tool, emit
 
 ARGUMENTS = {
-        "lang": ("choice", LANGS),
-    }
+    "lang": ("choice", LANGS),
+}
 
 
 class ListBuildingsTool(Tool):

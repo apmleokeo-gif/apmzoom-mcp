@@ -7,9 +7,9 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from utils.mcp_client import LANGS, build_arguments, call_tool, emit
 
 ARGUMENTS = {
-        "id": ("text", 64),
-        "lang": ("choice", LANGS),
-    }
+    "id": ("text", 64),
+    "lang": ("choice", LANGS),
+}
 
 
 class GetProductTool(Tool):

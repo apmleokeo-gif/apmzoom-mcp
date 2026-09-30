@@ -7,11 +7,11 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from utils.mcp_client import LANGS, build_arguments, call_tool, emit
 
 ARGUMENTS = {
-        "query": ("text", 100),
-        "lang": ("choice", LANGS),
-        "building": ("text", 40),
-        "limit": ("int", 1, 20),
-    }
+    "query": ("text", 100),
+    "lang": ("choice", LANGS),
+    "building": ("text", 40),
+    "limit": ("int", 1, 20),
+}
 
 
 class SearchProductsTool(Tool):

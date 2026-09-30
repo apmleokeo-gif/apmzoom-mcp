@@ -7,12 +7,12 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from utils.mcp_client import LANGS, build_arguments, call_tool, emit
 
 ARGUMENTS = {
-        "query": ("text", 60),
-        "building": ("text", 40),
-        "floor": ("text", 10),
-        "lang": ("choice", LANGS),
-        "limit": ("int", 1, 20),
-    }
+    "query": ("text", 60),
+    "building": ("text", 40),
+    "floor": ("text", 10),
+    "lang": ("choice", LANGS),
+    "limit": ("int", 1, 20),
+}
 
 
 class FindStallsTool(Tool):

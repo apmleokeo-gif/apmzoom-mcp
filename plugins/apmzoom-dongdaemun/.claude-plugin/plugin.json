@@ -19,6 +19,6 @@
     "b2b"
   ],
   "repository": "https://github.com/apmleokeo-gif/apmzoom-mcp",
-  "icon": "./icon.png",
+  "icon": "./.claude-plugin/icon.png",
   "privacyPolicyUrl": "https://www.apmzoom.com/privacy"
 }

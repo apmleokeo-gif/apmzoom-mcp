@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "apmzoom-dongdaemun",
+  "version": "1.0.0",
+  "description": "Search Dongdaemun (Seoul) wholesale fashion with apMZoomAI: items, new arrivals and stalls by building and floor, with links back to apMZoomAI. Read-only; no prices or contact details.",
+  "author": {
+    "name": "apM Hwashin Co., Ltd.",
+    "url": "https://www.apmzoom.com",
+    "email": "apm@apmzoom.com"
+  },
+  "homepage": "https://www.apmzoom.com",
+  "repository": "https://github.com/apmleokeo-gif/apmzoom-mcp",
+  "license": "MIT",
+  "keywords": ["dongdaemun", "wholesale", "fashion", "sourcing", "korea", "seoul", "mcp", "b2b"]
+}

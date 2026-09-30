@@ -52,6 +52,7 @@ Only stalls currently in business are included.
 - `.claude-plugin/marketplace.json` — lets Claude Code add this repository as a plugin marketplace
 - `server.json` — the listing in the official MCP Registry (`com.apmzoom.www/dongdaemun`)
 - `gemini-extension.json`, `GEMINI.md` — Gemini CLI extension
+- `plugin.json`, `mcp.json`, `skills/` — the repository root is also an [Agent Plugin](https://agent-plugins.org) (the format Kiro Powers and other clients read): manifest, the remote MCP server, and the same `dongdaemun-sourcing` skill
 
 The server itself is operated by apM Hwashin Co., Ltd. and is not part of this repository.
 

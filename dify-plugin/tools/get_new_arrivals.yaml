@@ -1,0 +1,256 @@
+identity:
+  name: get_new_arrivals
+  author: apmzoom
+  label:
+    en_US: New arrivals
+    zh_Hans: 新品上架
+    ja_JP: 新着商品
+description:
+  human:
+    en_US: List the newest items uploaded by Dongdaemun stalls in the last N hours (up to 168), optionally by building and category.
+    zh_Hans: 列出东大门档口最近 N 小时（最多 168）内上传的最新商品，可按楼栋和品类筛选。
+    ja_JP: 東大門の店舗が直近 N 時間（最大 168）にアップロードした新着商品を、ビルやカテゴリで絞り込んで一覧します。
+  llm: 'List the newest wholesale items uploaded by Dongdaemun (Seoul) stalls on apMZoomAI (앱엠줌AI) within the last N hours (default 24, up to 168), newest first, at most 3 per stall. Optional filters: building key (see list_buildings) and category (e.g. dress, knit, jeans, outer, shoes, bags). Returns item name, photos, category, stall location and an apMZoomAI link. No prices are provided; the link shows price and ordering details.'
+parameters:
+- name: hours
+  type: number
+  required: false
+  default: 24
+  min: 1
+  max: 168
+  label:
+    en_US: Look-back hours
+    zh_Hans: 回溯小时数
+    ja_JP: 遡る時間
+  human_description:
+    en_US: Only items uploaded within this many hours (1-168, default 24)
+    zh_Hans: 仅显示这么多小时内上传的商品（1-168，默认 24）
+    ja_JP: この時間以内にアップロードされた商品のみ（1〜168、既定 24）
+  llm_description: Look back this many hours (1-168, default 24).
+  form: llm
+- name: building
+  type: string
+  required: false
+  label:
+    en_US: Building
+    zh_Hans: 楼栋
+    ja_JP: ビル
+  human_description:
+    en_US: Only this building; use a building key from "List buildings", e.g. apM, THEOT, NUZZON
+    zh_Hans: 仅限该楼栋；使用“列出楼栋”返回的楼栋代号，例如 apM、THEOT、NUZZON
+    ja_JP: このビルのみ。「ビル一覧」で返るビルキー（例：apM、THEOT、NUZZON）を指定
+  llm_description: Only this building, e.g. "apM", "THEOT", "NUZZON". Use a building key returned by list_buildings.
+  form: llm
+- name: category
+  type: select
+  required: false
+  label:
+    en_US: Category
+    zh_Hans: 品类
+    ja_JP: カテゴリ
+  human_description:
+    en_US: Only this category, e.g. dress, knit, jeans, outer, shoes, bags
+    zh_Hans: 仅限该品类，例如 dress、knit、jeans、outer、shoes、bags
+    ja_JP: このカテゴリのみ（例：dress、knit、jeans、outer、shoes、bags）
+  llm_description: Only this category, e.g. dress, knit, jeans, outer, shoes, bags.
+  options:
+  - value: tee
+    label:
+      en_US: tee
+      zh_Hans: tee
+      ja_JP: tee
+  - value: shirt
+    label:
+      en_US: shirt
+      zh_Hans: shirt
+      ja_JP: shirt
+  - value: knit
+    label:
+      en_US: knit
+      zh_Hans: knit
+      ja_JP: knit
+  - value: cardigan
+    label:
+      en_US: cardigan
+      zh_Hans: cardigan
+      ja_JP: cardigan
+  - value: hoodie
+    label:
+      en_US: hoodie
+      zh_Hans: hoodie
+      ja_JP: hoodie
+  - value: sweater
+    label:
+      en_US: sweater
+      zh_Hans: sweater
+      ja_JP: sweater
+  - value: vest
+    label:
+      en_US: vest
+      zh_Hans: vest
+      ja_JP: vest
+  - value: jacket
+    label:
+      en_US: jacket
+      zh_Hans: jacket
+      ja_JP: jacket
+  - value: coat
+    label:
+      en_US: coat
+      zh_Hans: coat
+      ja_JP: coat
+  - value: trench
+    label:
+      en_US: trench
+      zh_Hans: trench
+      ja_JP: trench
+  - value: padding
+    label:
+      en_US: padding
+      zh_Hans: padding
+      ja_JP: padding
+  - value: suit
+    label:
+      en_US: suit
+      zh_Hans: suit
+      ja_JP: suit
+  - value: jeans
+    label:
+      en_US: jeans
+      zh_Hans: jeans
+      ja_JP: jeans
+  - value: shorts
+    label:
+      en_US: shorts
+      zh_Hans: shorts
+      ja_JP: shorts
+  - value: jumpsuit
+    label:
+      en_US: jumpsuit
+      zh_Hans: jumpsuit
+      ja_JP: jumpsuit
+  - value: dress
+    label:
+      en_US: dress
+      zh_Hans: dress
+      ja_JP: dress
+  - value: skirt
+    label:
+      en_US: skirt
+      zh_Hans: skirt
+      ja_JP: skirt
+  - value: set
+    label:
+      en_US: set
+      zh_Hans: set
+      ja_JP: set
+  - value: top
+    label:
+      en_US: top
+      zh_Hans: top
+      ja_JP: top
+  - value: outer
+    label:
+      en_US: outer
+      zh_Hans: outer
+      ja_JP: outer
+  - value: pants
+    label:
+      en_US: pants
+      zh_Hans: pants
+      ja_JP: pants
+  - value: accessories
+    label:
+      en_US: accessories
+      zh_Hans: accessories
+      ja_JP: accessories
+  - value: shoes
+    label:
+      en_US: shoes
+      zh_Hans: shoes
+      ja_JP: shoes
+  - value: bags
+    label:
+      en_US: bags
+      zh_Hans: bags
+      ja_JP: bags
+  - value: men
+    label:
+      en_US: men
+      zh_Hans: men
+      ja_JP: men
+  form: llm
+- name: lang
+  type: select
+  required: false
+  default: en
+  label:
+    en_US: Language
+    zh_Hans: 语言
+    ja_JP: 言語
+  human_description:
+    en_US: Language of item names, labels and links (default English)
+    zh_Hans: 商品名、标签和链接的语言（默认英文）
+    ja_JP: 商品名・ラベル・リンクの言語（既定は英語）
+  llm_description: 'Language for item names, labels and links: en, zh, ko, ja, vi, th, id or ms. Default en.'
+  options:
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+      ja_JP: English
+  - value: zh
+    label:
+      en_US: 中文
+      zh_Hans: 中文
+      ja_JP: 中文
+  - value: ko
+    label:
+      en_US: 한국어
+      zh_Hans: 한국어
+      ja_JP: 한국어
+  - value: ja
+    label:
+      en_US: 日本語
+      zh_Hans: 日本語
+      ja_JP: 日本語
+  - value: vi
+    label:
+      en_US: Tiếng Việt
+      zh_Hans: Tiếng Việt
+      ja_JP: Tiếng Việt
+  - value: th
+    label:
+      en_US: ไทย
+      zh_Hans: ไทย
+      ja_JP: ไทย
+  - value: id
+    label:
+      en_US: Bahasa Indonesia
+      zh_Hans: Bahasa Indonesia
+      ja_JP: Bahasa Indonesia
+  - value: ms
+    label:
+      en_US: Bahasa Melayu
+      zh_Hans: Bahasa Melayu
+      ja_JP: Bahasa Melayu
+  form: llm
+- name: limit
+  type: number
+  required: false
+  default: 12
+  min: 1
+  max: 30
+  label:
+    en_US: Number of results
+    zh_Hans: 返回数量
+    ja_JP: 件数
+  human_description:
+    en_US: How many results to return (1-30, default 12)
+    zh_Hans: 返回多少条结果（1-30，默认 12）
+    ja_JP: 返す件数（1〜30、既定 12）
+  llm_description: How many results to return (1-30, default 12).
+  form: llm
+extra:
+  python:
+    source: tools/get_new_arrivals.py

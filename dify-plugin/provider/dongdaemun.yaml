@@ -1,0 +1,24 @@
+identity:
+  author: apmzoom
+  name: dongdaemun
+  label:
+    en_US: apMZoomAI · Dongdaemun Wholesale
+    zh_Hans: apMZoomAI · 东大门批发
+    ja_JP: apMZoomAI · 東大門卸売
+  description:
+    en_US: 'Search Dongdaemun (Seoul) wholesale fashion on apMZoomAI: items, new arrivals and stalls by building and floor. Read-only; no account or API key needed.'
+    zh_Hans: 在 apMZoomAI 上搜索首尔东大门批发服饰：商品、新品上架，以及按楼栋和楼层查找档口。只读，无需账号或密钥。
+    ja_JP: apMZoomAI でソウル・東大門の卸売ファッションを検索：商品、新着、ビル・フロア別の店舗。読み取り専用で、アカウントや API キーは不要です。
+  icon: icon.png
+  tags:
+  - business
+  - search
+tools:
+- tools/search_products.yaml
+- tools/get_new_arrivals.yaml
+- tools/find_stalls.yaml
+- tools/get_product.yaml
+- tools/list_buildings.yaml
+extra:
+  python:
+    source: provider/dongdaemun.py

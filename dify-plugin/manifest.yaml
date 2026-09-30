@@ -1,0 +1,38 @@
+version: 0.0.1
+type: plugin
+author: apmzoom
+name: dongdaemun
+label:
+  en_US: apMZoomAI · Dongdaemun Wholesale
+  zh_Hans: apMZoomAI · 东大门批发
+  ja_JP: apMZoomAI · 東大門卸売
+description:
+  en_US: "Search Dongdaemun (Seoul) wholesale fashion on apMZoomAI: items, new arrivals and stalls by building and floor. Read-only; no account or API key needed."
+  zh_Hans: 在 apMZoomAI 上搜索首尔东大门批发服饰：商品、新品上架，以及按楼栋和楼层查找档口。只读，无需账号或密钥。
+  ja_JP: apMZoomAI でソウル・東大門の卸売ファッションを検索：商品、新着、ビル・フロア別の店舗。読み取り専用で、アカウントや API キーは不要です。
+icon: icon.png
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/dongdaemun.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 1.0.0
+created_at: '2026-09-30T17:00:00.000000000Z'
+privacy: PRIVACY.md
+repo: https://github.com/apmleokeo-gif/apmzoom-mcp/tree/main/dify-plugin
+contact: apm@apmzoom.com
+tags:
+  - business
+  - search

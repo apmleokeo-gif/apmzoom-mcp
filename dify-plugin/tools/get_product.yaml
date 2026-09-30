@@ -1,0 +1,85 @@
+identity:
+  name: get_product
+  author: apmzoom
+  label:
+    en_US: Item details
+    zh_Hans: 商品详情
+    ja_JP: 商品詳細
+description:
+  human:
+    en_US: 'Get one item by id: name, photos, category, stall location and link.'
+    zh_Hans: 按 ID 获取单个商品：名称、图片、品类、档口位置和链接。
+    ja_JP: ID で商品を 1 件取得します：商品名・写真・カテゴリ・店舗の場所・リンク。
+  llm: 'Get one wholesale item from apMZoomAI (앱엠줌AI) by the id returned by search_products or get_new_arrivals: name, up to 3 photos, category, the stall''s location in the Dongdaemun market (Seoul) and the apMZoomAI link. Returns an error if the item is no longer listed. No prices are provided; the link shows price and ordering details.'
+parameters:
+- name: id
+  type: string
+  required: true
+  label:
+    en_US: Item id
+    zh_Hans: 商品 ID
+    ja_JP: 商品 ID
+  human_description:
+    en_US: Item id returned by "Search wholesale items" or "New arrivals"
+    zh_Hans: “搜索批发商品”或“新品上架”返回的商品 ID
+    ja_JP: 「卸売商品を検索」または「新着商品」が返す商品 ID
+  llm_description: Item id returned by search_products or get_new_arrivals.
+  form: llm
+- name: lang
+  type: select
+  required: false
+  default: en
+  label:
+    en_US: Language
+    zh_Hans: 语言
+    ja_JP: 言語
+  human_description:
+    en_US: Language of item names, labels and links (default English)
+    zh_Hans: 商品名、标签和链接的语言（默认英文）
+    ja_JP: 商品名・ラベル・リンクの言語（既定は英語）
+  llm_description: 'Language for item names, labels and links: en, zh, ko, ja, vi, th, id or ms. Default en.'
+  options:
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+      ja_JP: English
+  - value: zh
+    label:
+      en_US: 中文
+      zh_Hans: 中文
+      ja_JP: 中文
+  - value: ko
+    label:
+      en_US: 한국어
+      zh_Hans: 한국어
+      ja_JP: 한국어
+  - value: ja
+    label:
+      en_US: 日本語
+      zh_Hans: 日本語
+      ja_JP: 日本語
+  - value: vi
+    label:
+      en_US: Tiếng Việt
+      zh_Hans: Tiếng Việt
+      ja_JP: Tiếng Việt
+  - value: th
+    label:
+      en_US: ไทย
+      zh_Hans: ไทย
+      ja_JP: ไทย
+  - value: id
+    label:
+      en_US: Bahasa Indonesia
+      zh_Hans: Bahasa Indonesia
+      ja_JP: Bahasa Indonesia
+  - value: ms
+    label:
+      en_US: Bahasa Melayu
+      zh_Hans: Bahasa Melayu
+      ja_JP: Bahasa Melayu
+  form: llm
+extra:
+  python:
+    source: tools/get_product.py

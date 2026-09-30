@@ -33,6 +33,7 @@ Only stalls currently in business are included.
 - **Cursor:** [Add to Cursor](https://cursor.com/en/install-mcp?name=apmzoom&config=eyJ1cmwiOiJodHRwczovL3d3dy5hcG16b29tLmNvbS9tY3AifQ%3D%3D)
 - **VS Code:** [Install in VS Code](https://vscode.dev/redirect/mcp/install?name=apmzoom&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fwww.apmzoom.com%2Fmcp%22%7D)
 - **Gemini CLI:** this repository is also a Gemini CLI extension (`gemini-extension.json`).
+- **Dify:** add the URL as an MCP server (Tools → MCP), or use the tool plugin in [`dify-plugin/`](dify-plugin) (submitted to the Dify Marketplace).
 - **Any other MCP client:** add a remote server with the URL above; no API key is needed.
 
 ## Try asking
@@ -52,6 +53,7 @@ Only stalls currently in business are included.
 - `.claude-plugin/marketplace.json` — lets Claude Code add this repository as a plugin marketplace
 - `server.json` — the listing in the official MCP Registry (`com.apmzoom.www/dongdaemun`)
 - `gemini-extension.json`, `GEMINI.md` — Gemini CLI extension
+- `dify-plugin/` — Dify tool plugin source (five tools wrapping the same server; no credentials)
 - `plugin.json`, `mcp.json`, `skills/` — the repository root is also an [Agent Plugin](https://agent-plugins.org) (the format Kiro Powers and other clients read): manifest, the remote MCP server, and the same `dongdaemun-sourcing` skill
 
 The server itself is operated by apM Hwashin Co., Ltd. and is not part of this repository.

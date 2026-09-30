@@ -1,0 +1,72 @@
+identity:
+  name: list_buildings
+  author: apmzoom
+  label:
+    en_US: List buildings
+    zh_Hans: 列出楼栋
+    ja_JP: ビル一覧
+description:
+  human:
+    en_US: List the covered Dongdaemun buildings with stall counts, new items in the last 7 days and, where known, opening hours and address.
+    zh_Hans: 列出覆盖的东大门楼栋，含档口数量、最近 7 天新品数量，以及已知的营业时间和地址。
+    ja_JP: 対応している東大門のビルを、店舗数・直近 7 日の新着数・（判明している場合）営業時間と住所とともに一覧します。
+  llm: 'List the Dongdaemun (Seoul) wholesale fashion buildings covered by apMZoomAI (앱엠줌AI): stalls currently in business, new items in the last 7 days and, where known, opening hours, address and a short description. Use the returned building key as the building filter of the other tools.'
+parameters:
+- name: lang
+  type: select
+  required: false
+  default: en
+  label:
+    en_US: Language
+    zh_Hans: 语言
+    ja_JP: 言語
+  human_description:
+    en_US: Language of item names, labels and links (default English)
+    zh_Hans: 商品名、标签和链接的语言（默认英文）
+    ja_JP: 商品名・ラベル・リンクの言語（既定は英語）
+  llm_description: 'Language for item names, labels and links: en, zh, ko, ja, vi, th, id or ms. Default en.'
+  options:
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+      ja_JP: English
+  - value: zh
+    label:
+      en_US: 中文
+      zh_Hans: 中文
+      ja_JP: 中文
+  - value: ko
+    label:
+      en_US: 한국어
+      zh_Hans: 한국어
+      ja_JP: 한국어
+  - value: ja
+    label:
+      en_US: 日本語
+      zh_Hans: 日本語
+      ja_JP: 日本語
+  - value: vi
+    label:
+      en_US: Tiếng Việt
+      zh_Hans: Tiếng Việt
+      ja_JP: Tiếng Việt
+  - value: th
+    label:
+      en_US: ไทย
+      zh_Hans: ไทย
+      ja_JP: ไทย
+  - value: id
+    label:
+      en_US: Bahasa Indonesia
+      zh_Hans: Bahasa Indonesia
+      ja_JP: Bahasa Indonesia
+  - value: ms
+    label:
+      en_US: Bahasa Melayu
+      zh_Hans: Bahasa Melayu
+      ja_JP: Bahasa Melayu
+  form: llm
+extra:
+  python:
+    source: tools/list_buildings.py

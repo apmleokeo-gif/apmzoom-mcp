@@ -1,0 +1,127 @@
+identity:
+  name: find_stalls
+  author: apmzoom
+  label:
+    en_US: Find stalls
+    zh_Hans: 查找档口
+    ja_JP: 店舗を探す
+description:
+  human:
+    en_US: Find stalls by name or stall number, and/or by building and floor; returns location, item counts and the store page link.
+    zh_Hans: 按名称或号码、楼栋和楼层查找档口，返回位置、商品数量和店铺页链接。
+    ja_JP: 店舗名・店舗番号、ビルやフロアから店舗を探し、場所・商品数・ストアページのリンクを返します。
+  llm: Find stalls (shops) in the Dongdaemun wholesale market, Seoul, on apMZoomAI (앱엠줌AI) by stall name or stall number, and/or by building and floor. Returns each stall's building, floor and stall number, how many items it lists, how many are new in the last 7 days, and its apMZoomAI store page. Contact details are never provided; buyers reach a stall through its store page. With no filters, returns stalls that uploaded new items in the last 7 days.
+parameters:
+- name: query
+  type: string
+  required: false
+  label:
+    en_US: Stall name or number
+    zh_Hans: 档口名称或号码
+    ja_JP: 店舗名または番号
+  human_description:
+    en_US: Stall name or stall number, e.g. FRANC, 엣코너, B-21
+    zh_Hans: 档口名称或号码，例如 FRANC、엣코너、B-21
+    ja_JP: 店舗名または店舗番号（例：FRANC、엣코너、B-21）
+  llm_description: Stall name or stall number, e.g. "FRANC", "엣코너", "B-21".
+  form: llm
+- name: building
+  type: string
+  required: false
+  label:
+    en_US: Building
+    zh_Hans: 楼栋
+    ja_JP: ビル
+  human_description:
+    en_US: Only this building; use a building key from "List buildings", e.g. apM, THEOT, NUZZON
+    zh_Hans: 仅限该楼栋；使用“列出楼栋”返回的楼栋代号，例如 apM、THEOT、NUZZON
+    ja_JP: このビルのみ。「ビル一覧」で返るビルキー（例：apM、THEOT、NUZZON）を指定
+  llm_description: Only this building, e.g. "apM", "THEOT", "NUZZON". Use a building key returned by list_buildings.
+  form: llm
+- name: floor
+  type: string
+  required: false
+  label:
+    en_US: Floor
+    zh_Hans: 楼层
+    ja_JP: フロア
+  human_description:
+    en_US: Floor, e.g. 1F, B1, 3
+    zh_Hans: 楼层，例如 1F、B1、3
+    ja_JP: フロア（例：1F、B1、3）
+  llm_description: Floor, e.g. "1F", "B1", "3".
+  form: llm
+- name: lang
+  type: select
+  required: false
+  default: en
+  label:
+    en_US: Language
+    zh_Hans: 语言
+    ja_JP: 言語
+  human_description:
+    en_US: Language of item names, labels and links (default English)
+    zh_Hans: 商品名、标签和链接的语言（默认英文）
+    ja_JP: 商品名・ラベル・リンクの言語（既定は英語）
+  llm_description: 'Language for item names, labels and links: en, zh, ko, ja, vi, th, id or ms. Default en.'
+  options:
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+      ja_JP: English
+  - value: zh
+    label:
+      en_US: 中文
+      zh_Hans: 中文
+      ja_JP: 中文
+  - value: ko
+    label:
+      en_US: 한국어
+      zh_Hans: 한국어
+      ja_JP: 한국어
+  - value: ja
+    label:
+      en_US: 日本語
+      zh_Hans: 日本語
+      ja_JP: 日本語
+  - value: vi
+    label:
+      en_US: Tiếng Việt
+      zh_Hans: Tiếng Việt
+      ja_JP: Tiếng Việt
+  - value: th
+    label:
+      en_US: ไทย
+      zh_Hans: ไทย
+      ja_JP: ไทย
+  - value: id
+    label:
+      en_US: Bahasa Indonesia
+      zh_Hans: Bahasa Indonesia
+      ja_JP: Bahasa Indonesia
+  - value: ms
+    label:
+      en_US: Bahasa Melayu
+      zh_Hans: Bahasa Melayu
+      ja_JP: Bahasa Melayu
+  form: llm
+- name: limit
+  type: number
+  required: false
+  default: 10
+  min: 1
+  max: 20
+  label:
+    en_US: Number of results
+    zh_Hans: 返回数量
+    ja_JP: 件数
+  human_description:
+    en_US: How many results to return (1-20, default 10)
+    zh_Hans: 返回多少条结果（1-20，默认 10）
+    ja_JP: 返す件数（1〜20、既定 10）
+  llm_description: How many results to return (1-20, default 10).
+  form: llm
+extra:
+  python:
+    source: tools/find_stalls.py

@@ -1,0 +1,114 @@
+identity:
+  name: search_products
+  author: apmzoom
+  label:
+    en_US: Search wholesale items
+    zh_Hans: 搜索批发商品
+    ja_JP: 卸売商品を検索
+description:
+  human:
+    en_US: Search wholesale fashion items listed by Dongdaemun stalls with short keywords in any language. Returns names, photos, category, stall location and a link; no prices.
+    zh_Hans: 用任意语言的简短关键词搜索东大门档口上架的批发服饰商品，返回名称、图片、品类、档口位置和链接；不含价格。
+    ja_JP: 任意の言語の短いキーワードで東大門の店舗が出品する卸売ファッション商品を検索します。商品名・写真・カテゴリ・店舗の場所・リンクを返します（価格は含まれません）。
+  llm: Search wholesale fashion items listed by stalls in the Dongdaemun market, Seoul, on apMZoomAI (앱엠줌AI). Accepts short keywords in any language (English, Korean, Chinese, Japanese, Vietnamese, Thai, Indonesian, Malay). Returns each item's name, photos, category, the stall's building, floor and stall number, and an apMZoomAI link. Prices are not available through this tool; the buyer opens the item link to see price and wholesale ordering details. Only stalls currently in business are included.
+parameters:
+- name: query
+  type: string
+  required: true
+  label:
+    en_US: Keywords
+    zh_Hans: 关键词
+    ja_JP: キーワード
+  human_description:
+    en_US: Short keywords in any language, e.g. linen dress, 원피스, 针织开衫
+    zh_Hans: 任意语言的简短关键词，例如 linen dress、원피스、针织开衫
+    ja_JP: 任意の言語の短いキーワード（例：linen dress、원피스、针织开衫）
+  llm_description: Short keywords in any language, e.g. "linen dress", "원피스", "针织开衫". Keywords only, not a whole message.
+  form: llm
+- name: lang
+  type: select
+  required: false
+  default: en
+  label:
+    en_US: Language
+    zh_Hans: 语言
+    ja_JP: 言語
+  human_description:
+    en_US: Language of item names, labels and links (default English)
+    zh_Hans: 商品名、标签和链接的语言（默认英文）
+    ja_JP: 商品名・ラベル・リンクの言語（既定は英語）
+  llm_description: 'Language for item names, labels and links: en, zh, ko, ja, vi, th, id or ms. Default en.'
+  options:
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+      ja_JP: English
+  - value: zh
+    label:
+      en_US: 中文
+      zh_Hans: 中文
+      ja_JP: 中文
+  - value: ko
+    label:
+      en_US: 한국어
+      zh_Hans: 한국어
+      ja_JP: 한국어
+  - value: ja
+    label:
+      en_US: 日本語
+      zh_Hans: 日本語
+      ja_JP: 日本語
+  - value: vi
+    label:
+      en_US: Tiếng Việt
+      zh_Hans: Tiếng Việt
+      ja_JP: Tiếng Việt
+  - value: th
+    label:
+      en_US: ไทย
+      zh_Hans: ไทย
+      ja_JP: ไทย
+  - value: id
+    label:
+      en_US: Bahasa Indonesia
+      zh_Hans: Bahasa Indonesia
+      ja_JP: Bahasa Indonesia
+  - value: ms
+    label:
+      en_US: Bahasa Melayu
+      zh_Hans: Bahasa Melayu
+      ja_JP: Bahasa Melayu
+  form: llm
+- name: building
+  type: string
+  required: false
+  label:
+    en_US: Building
+    zh_Hans: 楼栋
+    ja_JP: ビル
+  human_description:
+    en_US: Only this building; use a building key from "List buildings", e.g. apM, THEOT, NUZZON
+    zh_Hans: 仅限该楼栋；使用“列出楼栋”返回的楼栋代号，例如 apM、THEOT、NUZZON
+    ja_JP: このビルのみ。「ビル一覧」で返るビルキー（例：apM、THEOT、NUZZON）を指定
+  llm_description: Only this building, e.g. "apM", "THEOT", "NUZZON". Use a building key returned by list_buildings.
+  form: llm
+- name: limit
+  type: number
+  required: false
+  default: 10
+  min: 1
+  max: 20
+  label:
+    en_US: Number of results
+    zh_Hans: 返回数量
+    ja_JP: 件数
+  human_description:
+    en_US: How many results to return (1-20, default 10)
+    zh_Hans: 返回多少条结果（1-20，默认 10）
+    ja_JP: 返す件数（1〜20、既定 10）
+  llm_description: How many results to return (1-20, default 10).
+  form: llm
+extra:
+  python:
+    source: tools/search_products.py

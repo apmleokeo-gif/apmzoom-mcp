@@ -18,5 +18,7 @@
     "sourcing",
     "b2b"
   ],
-  "repository": "https://github.com/apmleokeo-gif/apmzoom-mcp"
+  "repository": "https://github.com/apmleokeo-gif/apmzoom-mcp",
+  "icon": "./icon.png",
+  "privacyPolicyUrl": "https://www.apmzoom.com/privacy"
 }

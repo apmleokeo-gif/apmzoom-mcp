@@ -53,6 +53,7 @@ Only stalls currently in business are included.
 - `.claude-plugin/marketplace.json` — lets Claude Code add this repository as a plugin marketplace
 - `server.json` — the listing in the official MCP Registry (`com.apmzoom.www/dongdaemun`)
 - `gemini-extension.json`, `GEMINI.md` — Gemini CLI extension
+- `.cursor-plugin/plugin.json`, `assets/logo.png` — Cursor plugin manifest and logo (the root `mcp.json` and `skills/` are the plugin's components; passes Cursor's `validate-template` check)
 - `dify-plugin/` — Dify tool plugin source (five tools wrapping the same server; no credentials)
 - `plugin.json`, `mcp.json`, `skills/` — the repository root is also an [Agent Plugin](https://agent-plugins.org) (the format Kiro Powers and other clients read): manifest, the remote MCP server, and the same `dongdaemun-sourcing` skill
 

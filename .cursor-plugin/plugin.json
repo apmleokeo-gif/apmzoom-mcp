@@ -1,0 +1,13 @@
+{
+  "name": "apmzoom-dongdaemun",
+  "displayName": "apMZoomAI · Dongdaemun wholesale",
+  "version": "1.0.0",
+  "description": "Search Dongdaemun (Seoul) wholesale fashion with apMZoomAI: items, new arrivals and stalls by building and floor, with links back to apMZoomAI. Read-only; no prices or contact details.",
+  "author": {
+    "name": "apM Hwashin Co., Ltd.",
+    "email": "apm@apmzoom.com"
+  },
+  "license": "MIT",
+  "keywords": ["dongdaemun", "wholesale", "fashion", "sourcing", "korea", "seoul", "mcp", "b2b"],
+  "logo": "assets/logo.png"
+}
